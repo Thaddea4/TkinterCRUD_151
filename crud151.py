@@ -61,3 +61,91 @@ def submit_nilai():
     entry_bio.delete(0, tk.END)
     entry_fis.delete(0, tk.END)
     entry_ing.delete(0, tk.END)
+
+
+def on_enter(e):
+    btn_submit["bg"] = "#2980b9"
+    btn_submit["fg"] = "white"
+
+def on_leave(e):
+    btn_submit["bg"] = "#3498db"
+    btn_submit["fg"] = "white"
+
+root = tk.Tk()
+root.title("Prediksi Fakultas")
+root.geometry("400x500")
+root.configure(bg="#F1F1F5")
+
+judul = tk.Label(
+    root,
+    text="Prediksi Fakultas",
+    font=("Arial", 16, "bold"),
+    bg="#FFFFFF",
+    fg="#100009"
+)
+judul.pack(pady=20)
+
+label_nama = tk.Label(
+    root,
+    text="Nama Siswa",
+    font=("Arial", 11),
+    bg="#252542",
+    fg="white"
+)
+label_nama.pack(pady=5)
+
+entry_nama = tk.Entry(root, width=30, font=("Arial", 11))
+entry_nama.pack(pady=5)
+
+label_bio = tk.Label(
+    root,
+    text="Nilai Biologi",
+    font=("Arial", 11),
+    bg="#252542",
+    fg="white"
+)
+label_bio.pack(pady=5)
+
+entry_bio = tk.Entry(root, width=30, font=("Arial", 11))
+entry_bio.pack(pady=5)
+
+label_fis = tk.Label(
+    root,
+    text="Nilai Fisika",
+    font=("Arial", 11),
+    bg="#252542",
+    fg="white"
+)
+label_fis.pack(pady=5)
+
+entry_fis = tk.Entry(root, width=30, font=("Arial", 11))
+entry_fis.pack(pady=5)
+
+label_ing = tk.Label(
+    root,
+    text="Nilai Inggris",
+    font=("Arial", 11),
+    bg="#252542",
+    fg="white"
+)
+label_ing.pack(pady=5)
+
+entry_ing = tk.Entry(root, width=30, font=("Arial", 11))
+entry_ing.pack(pady=5)
+
+btn_submit = tk.Button(
+    root,
+    text="Submit Nilai",
+    font=("Arial", 12, "bold"),
+    bg="#3498db",
+    fg="white",
+    width=20,
+    height=2,
+    command=submit_nilai
+)
+btn_submit.pack(pady=25)
+
+btn_submit.bind("<Enter>", on_enter)
+btn_submit.bind("<Leave>", on_leave)
+
+root.mainloop()
